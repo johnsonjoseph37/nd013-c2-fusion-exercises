@@ -48,8 +48,8 @@ sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXE_L2)))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXA_L2)))
 
 # import functions from individual exercise files
-import l2_examples
-import l2_exercises
+#import l2_examples
+#import l2_exercises
 import l1_examples
 import l1_exercises
 
@@ -127,7 +127,7 @@ while True:
         # l1_exercises.vis_intensity_channel(frame, lidar_name)
 
         # Example C1-5-6 : Convert range image to 3D point-cloud
-        # l1_examples.range_image_to_point_cloud(frame, lidar_name)
+        l1_examples.range_image_to_point_cloud(frame, lidar_name)
 
         #######
         ####### LESSON 1 EXERCISES & EXAMPLES  END #######
