@@ -48,8 +48,8 @@ sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXE_L2)))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXA_L2)))
 
 # import functions from individual exercise files
-#import l2_examples
-#import l2_exercises
+import l2_examples
+import l2_exercises
 import l1_examples
 import l1_exercises
 
@@ -127,7 +127,7 @@ while True:
         # l1_exercises.vis_intensity_channel(frame, lidar_name)
 
         # Example C1-5-6 : Convert range image to 3D point-cloud
-        l1_examples.range_image_to_point_cloud(frame, lidar_name)
+        # l1_examples.range_image_to_point_cloud(frame, lidar_name)
 
         #######
         ####### LESSON 1 EXERCISES & EXAMPLES  END #######
@@ -160,12 +160,12 @@ while True:
         # l2_examples.count_vehicles(frame)
 
         # Example C2-4-3 : Display label bounding boxes on top of BEV map
-        #lidar_bev = load_object_from_file(results_fullpath, data_filename, 'lidar_bev', cnt_frame)
-        #lidar_bev_labels = l2_examples.render_bb_over_bev(lidar_bev, frame.laser_labels, configs)
+        lidar_bev = load_object_from_file(results_fullpath, data_filename, 'lidar_bev', cnt_frame)
+        lidar_bev_labels = l2_examples.render_bb_over_bev(lidar_bev, frame.laser_labels, configs)
 
         # Example C2-4-4 : Display detected objects on top of BEV map
-        #detections = load_object_from_file(results_fullpath, data_filename, 'detections_' + configs.model + '_' + str(configs.conf_thresh), cnt_frame)
-        #l2_examples.render_obj_over_bev(detections, lidar_bev_labels, configs, True)
+        detections = load_object_from_file(results_fullpath, data_filename, 'detections_' + configs.model + '_' + str(configs.conf_thresh), cnt_frame)
+        l2_examples.render_obj_over_bev(detections, lidar_bev_labels, configs, True)
 
         # Exercise C2-4-5 : Compute precision and recall (part 1/2 - remove comments only, no action inside functions required)
         #det_performance = load_object_from_file(results_fullpath, data_filename, 'det_performance_' + configs.model + '_' + str(configs.conf_thresh), cnt_frame)
